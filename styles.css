@@ -1,0 +1,301 @@
+/* Estilos para el cuerpo y la página */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.6rem; /* Tamaño de fuente base (equivalente a 16px) */
+    line-height: 1.6; /* Line height para un mejor espaciado vertical */
+}
+
+/* Definición de tamaño de fuente */
+html {
+    font-size: 62.5%; /* 1rem = 10px (equivalente para facilitar cálculos) */
+}
+
+body {
+    font-size: 1.6rem; /* Tamaño de fuente base para todo el cuerpo */
+}
+.home {
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://wallpaperbat.com/img/1849738-compute-set-illustration-web-development-desk-flatdesign-hd-wallpaper.jpg);
+    background-position: center top;
+    background-size: cover;
+}
+/* Estilos para la barra de navegación */
+.nav {
+    width: 100%;
+    height: 6.5rem; /* Ajuste de altura según necesidad */
+    position: fixed;
+    line-height: 6.5rem; /* Ajuste de línea según altura */
+    text-align: center;
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    background-color: transparent; /* Fondo inicialmente transparente */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+.nav.scroll {
+    background-color: #111; /* Fondo negro cuando se desplaza */
+}
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    padding-left: 3rem;
+}
+
+.nav div.logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.nav div.logo a:hover {
+    color: #00E676;
+}
+
+.nav div.main_list {
+    height: 6.5rem; /* Ajuste de altura según necesidad */
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 6.5rem; /* Ajuste de altura según necesidad */
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 6.5rem; /* Ajuste de altura según necesidad */
+    padding: 0;
+    padding-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 6.5rem; /* Ajuste de línea según altura */
+    font-size: 2.4rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #00E676;
+}
+
+/* Estilos para el botón de menú responsivo */
+.navTrigger {
+    cursor: pointer;
+    width: 3rem; /* Ajuste de tamaño según necesidad */
+    height: 2.5rem; /* Ajuste de tamaño según necesidad */
+    margin: auto;
+    position: absolute;
+    right: 3rem; /* Ajuste de posición según necesidad */
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 0.2rem; /* Ajuste de borde según necesidad */
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.4rem; /* Ajuste de tamaño según necesidad */
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 0.5rem 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+/* Animaciones para el botón de menú */
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(0.9rem) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(0.9rem) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(0.9rem) rotate(0deg);
+    }
+    100% {
+        transform: translateY(0.9rem) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(0.9rem) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(0.9rem) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(0.9rem) rotate(0deg);
+    }
+    100% {
+        transform: translateY(0.9rem) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-0.9rem) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-0.9rem) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-0.9rem) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-0.9rem) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-0.9rem) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-0.9rem) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-0.9rem) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-0.9rem) rotate(135deg);
+    }
+}
+
+/* Estilos adicionales para el contenido principal */
+.myH2 {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 8rem; /* Ajuste de margen superior según necesidad */
+}
+
+.myP {
+    text-align: justify;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 2rem; /* Ajuste de tamaño de fuente según necesidad */
+}
+
+@media all and (max-width: 43.75em) { /* Media query para pantallas de hasta 700px */
+    .myP {
+        padding: 2%;
+    }
+}
