@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
     // Toggle navbar menu in mobile view
     $('.navTrigger').click(function() {
         $(this).toggleClass('active');
@@ -15,14 +15,21 @@ $(function() {
         }, 500, 'linear');
     });
 
-    // Change navbar background on scroll
+    // Change navbar and footer background on scroll
     $(window).scroll(function() {
         var scrollTop = $(this).scrollTop();
         var navbar = $('.nav');
+        var footer = $('footer');
 
         // Toggle navbar scroll class
         navbar.toggleClass('scroll', scrollTop > 50);
+
+        // Toggle footer scroll class
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - $('footer').height()) {
+            footer.addClass('scroll');
+        } else {
+            footer.removeClass('scroll');
+        }
     });
 });
-
 
